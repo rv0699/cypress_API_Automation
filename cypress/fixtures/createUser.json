@@ -1,0 +1,11 @@
+{
+    "name": "Automation test User",
+    "gender" : {
+        "male":"male",
+        "female":"female" 
+    },
+    "status": {
+        "active":"active",
+        "inactive":"inactive"
+    }
+}
