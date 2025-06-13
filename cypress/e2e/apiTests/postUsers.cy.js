@@ -48,6 +48,25 @@ describe('POST users API tests',()=>{
             expect(response.body).to.have.property("name",userData.name)
             expect(response.body).to.have.property("gender",userData.gender.male)
             expect(response.body).to.have.property("status",userData.status.active)
+        }).then((response)=>{
+            // API CHAINING
+            // Verifying ID by hitting GET API to check whether and checking response
+            const createdUserID = response.body.id
+
+            cy.request({
+                method : 'GET',
+                url : `https://gorest.co.in/public/v2/users/${createdUserID}`,
+                headers : {
+                    Authorization : `Bearer ${token}`
+                }
+            }).then((response)=>{
+                expect(response.body).to.have.property("email",randomEmail)
+                expect(response.body).to.have.property("id",createdUserID)
+                expect(response.body).to.have.property("name",userData.name)
+                expect(response.body).to.have.property("gender",userData.gender.male)
+                expect(response.body).to.have.property("status",userData.status.active)  
+            })
+
         })
     })
 

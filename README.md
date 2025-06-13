@@ -11,6 +11,8 @@ This project focuses on API Automation using Cypress automation framework
     - Run command "npx cypress open" to open Cypress Test Runner , when ran for the first time , it will create a default project structure inside a directory named cypress
 
 - 2025-06-13: Added test cases for GET API , https://gorest.co.in/ is being used for automation in the project
+- 2025-06-13: Added test cases for POST API , https://gorest.co.in/ is being used for automation in the project
+- 2025-06-13: Added test cases as an example for API chaining
 
 ## How to Use
 Instructions for running or contributing to the project.
