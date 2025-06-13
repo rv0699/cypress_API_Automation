@@ -2,26 +2,19 @@
 
 // Fixed data to be passed from fixture , using the following line
 import userData from "../../fixtures/createUser";
+import { generateRandomData } from "../../support/commands";
 
 describe('POST users API tests',()=>{
-    let token = "ad15584be400be0b41d820a26fe4fa0df9443fb90ac379fe60c037c3f089e0d5";
     let randomEmail="";
-    let randomtext="";
 
-    it('TC 1 : Create User',()=>{
-
-        // Function to generate random email id at every test run
-        let data = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-        for(let i=0;i<10;i++){
-            randomtext+=data.charAt(Math.floor(Math.random() * data.length))
-            randomEmail=`${randomtext}@TestMail.com`;
-        }        
+    it('TC 1 : Create User',()=>{    
+        randomEmail=`${generateRandomData()}@TestMail.com`;
 
         cy.request({
             method : 'POST',
             url : 'https://gorest.co.in/public/v2/users',
             headers : {
-                Authorization : `Bearer ${token}`
+                Authorization : `Bearer ${userData.token}`
             },
             body :
             {
@@ -57,7 +50,7 @@ describe('POST users API tests',()=>{
                 method : 'GET',
                 url : `https://gorest.co.in/public/v2/users/${createdUserID}`,
                 headers : {
-                    Authorization : `Bearer ${token}`
+                    Authorization : `Bearer ${userData.token}`
                 }
             }).then((response)=>{
                 expect(response.body).to.have.property("email",randomEmail)

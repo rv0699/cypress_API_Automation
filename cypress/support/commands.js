@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+function generateRandomData(){
+    let data = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+    let randomtext="";
+    for(let i=0;i<10;i++){
+        randomtext+=data.charAt(Math.floor(Math.random() * data.length))
+    }      
+    return randomtext;
+}
+
+export {
+    generateRandomData
+}

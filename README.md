@@ -13,6 +13,7 @@ This project focuses on API Automation using Cypress automation framework
 - 2025-06-13: Added test cases for GET API , https://gorest.co.in/ is being used for automation in the project
 - 2025-06-13: Added test cases for POST API , https://gorest.co.in/ is being used for automation in the project
 - 2025-06-13: Added test cases as an example for API chaining
+- 2025-06-14: Added test cases for PUT API and made minor modifications to remove hard coding from project
 
 ## How to Use
 Instructions for running or contributing to the project.
