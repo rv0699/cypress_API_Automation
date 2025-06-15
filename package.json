@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "This project contains API automation via cypress",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "pretest": "rm -rf cypress/reports mochawesome-report mochawesome.json",
+  "test": "cypress run",
+  "posttest": "mochawesome-merge cypress/reports/mochawesome/*.json > mochawesome.json && marge mochawesome.json"
+},
   "author": "Raghav Vasudeva",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.4.1"
+    "cypress": "^14.4.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

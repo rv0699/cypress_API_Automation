@@ -1,3 +1,7 @@
 ## Add all files / directories to be ignored below
 /node_modules
 package-lock.json
+cypress/reports/mochawesome
+/mochawesome-report
+mochawesome.json
+.DS_Store
