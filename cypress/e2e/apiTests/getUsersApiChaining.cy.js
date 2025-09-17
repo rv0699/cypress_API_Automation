@@ -1,7 +1,7 @@
 /// <reference types = 'cypress' />
 
 describe('GET users : API Chaining',()=>{
-    let token ='ad15584be400be0b41d820a26fe4fa0df9443fb90ac379fe60c037c3f089e0d5';
+    let token ='your_token_here';
     /* 
         Fetching all users , then saving id of the user at the first position and hitting api with the
         saved id and validating the response 
