@@ -1,7 +1,8 @@
 # Cypress API Automation
 
 ## Project Overview
-This project focuses on API Automation using Cypress automation framework
+This project focuses on API Automation using Cypress . 
+Note : Framework is still under development phase
 
 ## Progress Log
 ### 2025-06-12
